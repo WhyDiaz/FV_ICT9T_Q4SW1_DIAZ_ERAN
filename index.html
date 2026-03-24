@@ -10,7 +10,7 @@
         body {
             background-color: #f0f2f5; 
             font-family: 'Inter', sans-serif;
-            background-image: url(https://media1.tenor.com/m/siwO2vaIrWUAAAAC/school-system-school.gif);
+            background-image: url(https://media1.tenor.com/m/UW05sKVRbDkAAAAC/minions.gif);
             background-repeat: no-repeat;
             background-size: cover;
             min-height: 100vh;
@@ -38,12 +38,14 @@
 
         .btn-black:hover { background-color: #333; color: white; }
 
+        
+
 
         .navbar { background: white !important; border-bottom: 1px solid #e5e7eb; }
         .navbar .nav-link { color: #4b5563 !important; font-weight: 500; }
         .navbar .navbar-brand { color: #111827 !important; font-weight: 700; }
 
-        #train { width: 40px; height: 40px; margin-left: 8px; }
+        #GRU { width: 40px; height: 40px; margin-left: 8px; }
     </style>
 
 </head>
@@ -52,7 +54,7 @@
     <nav class="navbar navbar-expand-lg border-bottom">
     <div class="container">
         <a class="navbar-brand fw-bold" href="Home Page.html">The S Y S T E M</a>
-            <img src="https://thumbs.dreamstime.com/b/fast-train-llogo-design-high-speed-rail-icon-vector-illustration-fast-train-llogo-design-high-speed-rail-silhouette-icon-vector-291958535.jpg" alt="train" id="train">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Gru_Logo.jpg" alt="GRU" id="GRU">
         </a>
     </div>
 </nav>
@@ -64,6 +66,11 @@
             <p class="text-muted">NIW OT UOY ROF DENGISED TON SAW TAHT METSYS EHT OT NI NIGOL
 </p>
         </div>
+
+        <div class="pfp-wrapper">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Gru_Logo.jpg" alt="Profile" class="img-fluid rounded-circle" width="120">
+        </div>
+
 
         <form id="loginForm">
             <div class="mb-4">
@@ -87,7 +94,7 @@
         </form>
 
         <p class="text-center mt-3 small">
-            Forgot your <a href="Registration Page.html" class="text-primary text-decoration-none fw-bold">Password?</a>
+            Forgot Your <a href="Registration Page.html" class="text-primary text-decoration-none fw-bold">Username / Password?</a>
         </p>
     </div>
 </div>
@@ -96,9 +103,7 @@
     document.getElementById("loginForm").onsubmit = function(event) {
         event.preventDefault(); 
         let name = document.getElementById("fname").value;
-        alert("Welcome back, " + name + "! Bringing you to the home page shortly..");
-        
-        window.location.href = "Home Page.html";
+        alert("Welcome back, " + name + "! Giving you access to the S Y S T E M...");
     };
 </script>
     
