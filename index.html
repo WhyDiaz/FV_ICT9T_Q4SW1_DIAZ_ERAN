@@ -80,11 +80,11 @@
 
             <div class="mb-4">
                 <label class="form-label fw-semibold">Password</label>
-                <input type="password" class="form-control" placeholder="********" required>
+                <input type="password" class="form-control" placeholder="********" id="pword">
             </div>
 
             <div class="mb-4 form-check">
-                <input type="checkbox" class="form-check-input" id="terms" required>
+                <input type="checkbox" class="form-check-input" id="terms">
                 <label class="form-check-label small" for="terms">
                     Remember me 
                 </label>
@@ -94,25 +94,41 @@
         </form>
 
         <p class="text-center mt-3 small">
-            Forgot Your <a href="Registration Page.html" class="text-primary text-decoration-none fw-bold">Username / Password?</a>
+            Forgot Your <a href="Forgot Your Username : Password page.html" class="text-primary text-decoration-none fw-bold">Username / Password?</a>
         </p>
     </div>
 </div>
 
 <script>
+    window.onload = function() {
+        const savedName = localStorage.getItem("rememberedUser");
+        if (savedName) {
+            document.getElementById("fname").value = savedName;
+            document.getElementById("terms").checked = true;
+        }
+    };
+
     document.getElementById("loginForm").onsubmit = function(event) {
         event.preventDefault(); 
         
         let name = document.getElementById("fname").value;
         let pass = document.getElementById("pword").value;
+        let isRemembered = document.getElementById("terms").checked;
 
         let correctUser = "Felonious Gru";
         let correctPass = "Ilovemyminions";
 
         if (name === correctUser && pass === correctPass) {
-            alert("Welcome " + name + "!");
+
+            if (isRemembered) {
+                localStorage.setItem("rememberedUser", name);
+            } else {
+                localStorage.removeItem("rememberedUser");
+            }
+            
+            alert("WELCOME BACK " + name + " TO THE S Y S T E M");
         } else {
-            alert("Incorrect username and/or password.");
+            alert("INCORRECT USERNAME OR PASSWORD. PLEASE TRY AGAIN OR YOUR COMPUTER WILL BE DESTROYED THANK YOU.");
         }
     };
 </script>
